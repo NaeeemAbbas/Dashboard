@@ -7,7 +7,7 @@ const LoginPage = () => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   
-  // New state for password visibility
+  
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen flex bg-white font-sans selection:bg-violet-100 selection:text-violet-700">
       
-      {/* --- LEFT SIDE: VALUE PROPOSITION --- */}
+    
       <div className="hidden lg:flex flex-1 bg-violet-600 items-center justify-center p-16 text-white relative overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-white/10 blur-[100px] rounded-full"></div>
         <div className="max-w-md relative z-10">
@@ -51,7 +51,7 @@ const LoginPage = () => {
         </div>
       </div>
 
-      {/* --- RIGHT SIDE: LOGIN FORM --- */}
+      
       <div className="flex-1 flex flex-col justify-center py-12 px-6 sm:px-12 lg:px-24 xl:px-32">
         <div className="mx-auto w-full max-w-sm">
           <div className="lg:hidden mb-10">
@@ -93,7 +93,7 @@ const LoginPage = () => {
                 <Link to="#" className="text-xs font-bold text-violet-600">Forgot password?</Link>
               </div>
               
-              {/* --- PASSWORD INPUT CONTAINER --- */}
+             
               <div className="relative">
                 <input 
                   type={showPassword ? "text" : "password"} 
@@ -104,7 +104,7 @@ const LoginPage = () => {
                   className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-violet-500 outline-none transition-all pr-12" 
                 />
                 
-                {/* --- EYE ICON BUTTON --- */}
+          
                 <button 
                   type="button" 
                   onClick={() => setShowPassword(!showPassword)}
