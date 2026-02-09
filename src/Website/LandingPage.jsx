@@ -90,9 +90,21 @@ const LandingPage = () => {
             <Link to="/signup" className="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold text-base md:text-lg hover:bg-slate-800 transition shadow-xl active:scale-[0.97]">
               Get Started Free
             </Link>
-            <button className="w-full sm:w-auto px-8 py-4 bg-white border border-slate-200 text-slate-600 rounded-2xl font-bold text-base md:text-lg hover:bg-slate-50 transition active:scale-[0.97]">
+            <button onClick={()=> {
+              const user ={
+                name:"Naeem",
+                email:"nasn@gmail.com",
+                gender:"Male"
+              }
+              localStorage.setItem('user',JSON.stringify(user))
+             }
+              } className="w-full sm:w-auto px-8 py-4 bg-white border border-slate-200 text-slate-600 rounded-2xl font-bold text-base md:text-lg hover:bg-slate-50 transition active:scale-[0.97]">
               Watch Demo
             </button>
+              <button onClick={()=>localStorage.clear()} className="w-full sm:w-auto px-8 py-4 bg-white border border-slate-200 text-slate-600 rounded-2xl font-bold text-base md:text-lg hover:bg-slate-50 transition active:scale-[0.97]">
+               Demo
+            </button>
+            <h1>{localStorage.getItem('name')}</h1>
           </div>
 
           {/* Device Mockup / Social Proof Placeholder */}
