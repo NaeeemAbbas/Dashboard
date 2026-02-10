@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import LandingPage from "./Website/LandingPage";
 import LoginPage from "./Website/LoginPage";
 import SignupPage from "./Website/SignUp";
@@ -8,6 +13,7 @@ import UserDetailsPage from "./Dashboard/UserDetails";
 import AnalyticsPage from "./Dashboard/Analytics";
 import UserPage from "./Dashboard/User";
 import DashboardLayout from "./Dashboard/Dashboard"; // This is your Layout with Sidebar/Header
+import Home from "./ContexApi/Home";
 
 function App() {
   return (
@@ -22,11 +28,12 @@ function App() {
         {/* We wrap these in the DashboardLayout so the Sidebar/Header always show */}
         <Route element={<DashboardLayout />}>
           {/* Use 'path' for the main dashboard view or a redirect */}
-          <Route path="/dashboard" element={<AnalyticsPage />} /> 
+          <Route path="/dashboard" element={<AnalyticsPage />} />
           <Route path="/analytics" element={<AnalyticsPage />} />
           <Route path="/users" element={<UserPage />} />
           <Route path="/user/:id" element={<UserDetailsPage />} />
           <Route path="/setting" element={<SettingsPage />} />
+          <Route path="home/:id" element={<Home/>} />
         </Route>
 
         {/* Catch-all: redirect to home if route doesn't exist */}
